@@ -1,25 +1,27 @@
 <template>
-	<el-container class="main-container">
-		<el-aside v-bind:class="asideClass">
-			<LeftNav></LeftNav>
-		</el-aside>
-		<el-container>
-			<el-header class="main-header">
-				<TopNav></TopNav>
-			</el-header>
-			<!-- tab页 -->
-			<div class="template-tabs">
-				<el-tabs v-model="activeIndex" type="border-card" closable @tab-click="tabClick" @tab-remove="tabRemove">
-					<el-tab-pane :key="item.name" v-for="(item, index) in options" :label="item.name" :name="item.route">
-					</el-tab-pane>
-        </el-tabs>
-			</div>
-			<el-main class="main-center">
-				<!-- 中间的内容 -->
-				<router-view></router-view>
-			</el-main>
-		</el-container>
-	</el-container>
+	<div style="background-color:white;margin-top: -50px">
+    <el-container class="main-container">
+      <el-aside v-bind:class="asideClass">
+        <LeftNav></LeftNav>
+      </el-aside>
+      <el-container>
+        <el-header class="main-header">
+          <TopNav></TopNav>
+        </el-header>
+        <!-- tab页 -->
+        <div class="template-tabs">
+          <el-tabs v-model="activeIndex" type="border-card" closable @tab-click="tabClick" @tab-remove="tabRemove">
+            <el-tab-pane :key="item.name" v-for="(item, index) in options" :label="item.name" :name="item.route">
+            </el-tab-pane>
+          </el-tabs>
+        </div>
+        <el-main class="main-center">
+          <!-- 中间的内容 -->
+          <router-view></router-view>
+        </el-main>
+      </el-container>
+    </el-container>
+  </div>
 </template>
 
 <script>
@@ -61,7 +63,7 @@
                     if (this.options && this.options.length >= 1) {
                         this.$store.commit('set_active_index', this.options[this.options.length - 1].route);
                         this.$router.push({ path: this.activeIndex });
-                    } 
+                    }
 					   else {
                         this.$router.push({ path: '/AppMain' });
                     }
@@ -108,7 +110,7 @@
 		}
 	};
 
-		
+
 </script>
 <style type="text/css">
 	.el-tabs--border-card>.el-tabs__content {

@@ -64,7 +64,7 @@
 <style>
 	.el-menu-vertical-demo:not(.el-menu--collapse) {
 		width: 240px;
-		min-height: 400px;
+		min-height: 650px;
 	}
 
 	.el-menu-vertical-demo:not(.el-menu--collapse) {
@@ -94,6 +94,6 @@
 	}
 
 	.logoimg {
-		height: 40px;
+		height: 50px;
 	}
 </style>

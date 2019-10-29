@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/views/Login'
 import reg from '@/views/Reg'
 import AppMain from '@/components/AppMain'
+import Reception from '@/components/Reception'
 import tozi from '@/views/lixin/tozi'
 import daikuan from '@/views/lixin/daikuan'
 import cailiao from '@/views/caonuo/cailiao'
@@ -14,6 +15,10 @@ import jilu from '@/views/yangjie/jilu'
 import tixian from '@/views/yangjie/tixian'
 import geren from '@/views/qiantai/geren'
 import creditLoan from '@/views/qiantai/CreditLoan'
+import log from '@/views/qiantai/login'
+import ReceptionHome from '@/views/qiantai/ReceptionHome'
+import Bid from '@/views/qiantai/lixin/Bid'
+import Bidding from '@/views/qiantai/lixin/Bidding'
 
 Vue.use(Router)
 
@@ -27,6 +32,29 @@ export default new Router({
       path: '/reg',
       name: 'reg',
       component: reg
+    },{
+      path: '/log',
+      name: 'log',
+      component: log
+    },{
+      path: '/Reception',
+      name: 'Reception',
+      component: Reception,
+      children:[
+        {
+          path: '/Reception/ReceptionHome',
+          name: 'ReceptionHome',
+          component: ReceptionHome
+        },{
+          path: '/lixin/Bid',
+          name: 'Bid',
+          component: Bid
+        },{
+          path: '/lixin/Bidding',
+          name: 'Bidding',
+          component: Bidding
+        },
+       ]
     },{
     path: '/creditLoan',
     name: 'creditLoan',
